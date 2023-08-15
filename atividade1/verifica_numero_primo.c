@@ -1,15 +1,33 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <locale.h>
 
-int verificanumeroprimo(int n){
-    return 0;
+
+int verificanumero(int num) {
+    if (num <= 1) {
+        return 0;  
+    }
+    
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return 0;  
+        }
+    }
+    
+    return 1; 
 }
 
-int main( int argc, char* argv[]){
+int main() {
+	setlocale(LC_ALL,(""));
+    int num;
 
-    int n;
-    printf("teste");
+    printf("Digite um número: ");
+    scanf("%d", &num);
 
-    printf("\n%s\n", argv[1]);
+    if (verificanumero(num)) {
+        printf("1 - O número é primo.\n");
+    } else {
+        printf("0 - O número não é primo.\n");
+    }
 
-    
+    return 0;
 }
