@@ -52,9 +52,6 @@ int main(int argc, char *argv[]) {
         fscanf(arquivo, "%lf,%lf", &pontos[i].x, &pontos[i].y);
     }
 
-    fclose(arquivo);
-
     
-
     return 0;
 }
