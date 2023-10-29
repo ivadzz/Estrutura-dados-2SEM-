@@ -3,9 +3,7 @@
 #include "lista.h"
 
 No* criar_ponteiro_no(float valor, No* proximo_no){
-    /*memoria alocada pois nao perdemos ele no escopo ao alocar em outro meto, por exemplo a main.
-     Se fose (No no) ele funcnionaria apenas no metodo e perderia o endereço ao ser chamado na main, pois estou criando
-     a variavel apenar no metodo */
+
     No* no  = malloc(sizeof(No));
     no-> valor = valor;
     no-> proximo_no = proximo_no;
@@ -34,7 +32,7 @@ void lista_imprimir(No* no_cabeca_lista){
  }
 }
 
-//controle da cauda para gerar uma lista circular
+
 
 No* lista_copiar(No* no_cabeca_lista){
    
@@ -69,11 +67,11 @@ int lista_verificar_existencia(No* L, char valor_busca) {
     No* atual = L;
     while (atual != NULL) {
         if (atual->valor == valor_busca) {
-            return 1; // Valor encontrado na lista
+            return 1; 
         }
         atual = atual->proximo_no;
     }
-    return 0; // Valor não encontrado na lista
+    return 0; 
 }
 
 int lista_verificar_ocorrencias(No* L, char valor_busca) {
